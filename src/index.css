@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..100;1,14..32,100..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-display: "Inter", sans-serif;
+  
+  --color-primary: #111111;
+  --color-accent: #FF3D00; /* Vibrant Orange */
+  --color-accent-end: #FF8A00;
+  --color-danger: #FF3D00;
+}
+
+@layer base {
+  body {
+    @apply font-sans bg-[#FAFAFA] text-primary;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight;
+  }
+}
+
+.million-dollar-gradient {
+  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-end) 100%);
+}
+
+.bounce-shadow {
+  box-shadow: 0 20px 40px rgba(255, 61, 0, 0.15);
+}
+
+.glass-card {
+  @apply bg-white/80 backdrop-blur-[12px] border border-black/5 rounded-[40px];
+}
+
+.bouncy-hover {
+  @apply transition-all duration-300 ease-out hover:scale-[1.05] active:scale-[0.95];
+}
+
+
