@@ -2,7 +2,11 @@ import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { MousePointer2, TrendingUp } from 'lucide-react';
 
-export default function Hero() {
+interface HeroProps {
+  onCtaClick: () => void;
+}
+
+export default function Hero({ onCtaClick }: HeroProps) {
   return (
     <section className="pt-32 pb-20 px-6 overflow-hidden">
       <div className="max-w-7xl mx-auto">
@@ -23,10 +27,13 @@ export default function Hero() {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-6">
-              <Link to="/laser" className="million-dollar-gradient text-white px-10 py-5 rounded-2xl font-black text-lg bounce-shadow bouncy-hover flex items-center justify-center gap-3 group uppercase italic">
+              <button 
+                onClick={onCtaClick}
+                className="million-dollar-gradient text-white px-10 py-5 rounded-2xl font-black text-lg bounce-shadow bouncy-hover flex items-center justify-center gap-3 group uppercase italic"
+              >
                 UN-F*** MY PIPELINE
                 <TrendingUp className="w-6 h-6 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-              </Link>
+              </button>
               <div className="flex items-center gap-3 px-6 py-4 rounded-2xl border border-black/5 bg-white/50">
                 <div className="flex -space-x-3">
                   {[1, 2, 3].map((i) => (

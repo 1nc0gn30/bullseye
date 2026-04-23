@@ -3,10 +3,14 @@ import ProblemSection from '../components/ProblemSection';
 import DataVisuals from '../components/DataVisuals';
 import Features from '../components/Features';
 
-export default function Home() {
+interface HomeProps {
+  onCtaClick: () => void;
+}
+
+export default function Home({ onCtaClick }: HomeProps) {
   return (
     <>
-      <Hero />
+      <Hero onCtaClick={onCtaClick} />
       <ProblemSection />
       <Features />
       <DataVisuals />

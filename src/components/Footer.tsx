@@ -3,7 +3,11 @@ import { motion } from 'motion/react';
 import { ArrowRight, Zap, ShieldAlert, CheckCircle2 } from 'lucide-react';
 import Logo from './Logo';
 
-export default function Footer() {
+interface FooterProps {
+  onCtaClick: () => void;
+}
+
+export default function Footer({ onCtaClick }: FooterProps) {
   return (
     <footer className="bg-black text-white pt-32 pb-12 px-6">
       <div className="max-w-7xl mx-auto">
@@ -20,10 +24,13 @@ export default function Footer() {
             <p className="text-gray-400 text-2xl mb-12 max-w-xl">
               Don't spend another f****** dime on generic lists. Get the precision your team deserves.
             </p>
-            <Link to="/laser" className="million-dollar-gradient text-white px-12 py-6 rounded-2xl text-2xl font-black bouncy-hover bounce-shadow flex items-center justify-center gap-4 group uppercase italic w-fit">
+            <button 
+              onClick={onCtaClick}
+              className="million-dollar-gradient text-white px-12 py-6 rounded-2xl text-2xl font-black bouncy-hover bounce-shadow flex items-center justify-center gap-4 group uppercase italic w-fit"
+            >
               SIGN UP OR KEEP LOSING MONEY
               <ArrowRight className="w-8 h-8 group-hover:translate-x-2 transition-transform" />
-            </Link>
+            </button>
           </div>
           
           <div className="space-y-8">
@@ -52,7 +59,7 @@ export default function Footer() {
           
           <div className="flex gap-10">
             <a href="#" className="hover:text-white transition-colors">Integrations</a>
-            <a href="#" className="hover:text-white transition-colors">API</a>
+            <a href="#" className="hover:text-white transition-colors">Sitemap</a>
             <a href="#" className="hover:text-white transition-colors">Security</a>
           </div>
           
